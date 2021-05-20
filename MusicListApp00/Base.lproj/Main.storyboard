@@ -115,11 +115,37 @@
                         <outlet property="favButton" destination="TYD-8b-kRt" id="6Eg-I0-IdB"/>
                         <outlet property="listButton" destination="L90-Hx-aLB" id="D2W-gp-zMx"/>
                         <outlet property="searchTextField" destination="gkM-8t-JVG" id="zwa-Z5-utl"/>
+                        <segue destination="se0-q9-K2l" kind="presentation" identifier="selectVC" modalPresentationStyle="fullScreen" id="UtH-eV-SYA"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="O4l-Ei-9n3" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1653.8461538461538" y="83.886255924170612"/>
+        </scene>
+        <!--Select View Controller-->
+        <scene sceneID="V48-wT-4UE">
+            <objects>
+                <viewController id="se0-q9-K2l" customClass="SelectViewController" customModule="MusicListApp00" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="yVU-p2-xKc">
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bbF-QJ-v0n" customClass="VerticalCardSwiper" customModule="VerticalCardSwiper">
+                                <rect key="frame" x="0.0" y="44" width="390" height="800"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="Cof-qO-kTR"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <connections>
+                        <outlet property="cardSwiper" destination="bbF-QJ-v0n" id="GtW-vG-vu3"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="wfR-B4-TQS" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1653.8461538461538" y="760.66350710900474"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="PLn-eN-Jm2">

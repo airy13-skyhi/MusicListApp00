@@ -18,11 +18,12 @@ import ChameleonFramework
 
 class SearchViewController: UIViewController, UITextFieldDelegate {
     
-    
+    //sendArray
     var artistNameArray = [String]()
     var musicNameArray = [String]()
     var previewURLArray = [String]()
     var imageStringArray = [String]()
+    
     var userID = String()
     var userName = String()
     var autoID = String()
@@ -97,7 +98,7 @@ class SearchViewController: UIViewController, UITextFieldDelegate {
     
     @IBAction func moveToSelectCardView(_ sender: Any) {
         
-        
+        startParse(keyword: searchTextField.text!)
         
     }
     
@@ -106,6 +107,22 @@ class SearchViewController: UIViewController, UITextFieldDelegate {
         
         performSegue(withIdentifier: "selectVC", sender: nil)
         
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        if searchTextField.text != nil && segue.identifier == "selectVC" {
+            
+            let selectVC = segue.description as! SelectViewController
+            
+            selectVC.artistNameArray = self.artistNameArray
+            selectVC.imageStringArray = self.imageStringArray
+            selectVC.musicNameArray = self.musicNameArray
+            selectVC.previewURLArray = self.previewURLArray
+            selectVC.userID = self.userID
+            selectVC.userName = self.userName
+            
+        }
     }
     
     
@@ -158,6 +175,7 @@ class SearchViewController: UIViewController, UITextFieldDelegate {
                     }
                 }
                 
+                HUD.hide()
                 
             case .failure(let error):
                 print(error)
