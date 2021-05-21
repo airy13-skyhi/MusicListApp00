@@ -20,6 +20,8 @@
 		05BD619B265614310002495A /* SelectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05BD619A265614310002495A /* SelectViewController.swift */; };
 		05BD619E265668A20002495A /* CardViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05BD619C265668A20002495A /* CardViewCell.swift */; };
 		05BD619F265668A20002495A /* CardViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 05BD619D265668A20002495A /* CardViewCell.xib */; };
+		05BD61A12656865C0002495A /* MusicDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05BD61A02656865C0002495A /* MusicDataModel.swift */; };
+		05BD61A326587D150002495A /* FavoriteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05BD61A226587D150002495A /* FavoriteViewController.swift */; };
 		AEBD3E19C91EBE9021803954 /* Pods_MusicListApp00.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 23A63CE675A53631C5E84A98 /* Pods_MusicListApp00.framework */; };
 /* End PBXBuildFile section */
 
@@ -39,6 +41,8 @@
 		05BD619A265614310002495A /* SelectViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectViewController.swift; sourceTree = "<group>"; };
 		05BD619C265668A20002495A /* CardViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardViewCell.swift; sourceTree = "<group>"; };
 		05BD619D265668A20002495A /* CardViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CardViewCell.xib; sourceTree = "<group>"; };
+		05BD61A02656865C0002495A /* MusicDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicDataModel.swift; sourceTree = "<group>"; };
+		05BD61A226587D150002495A /* FavoriteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteViewController.swift; sourceTree = "<group>"; };
 		23A63CE675A53631C5E84A98 /* Pods_MusicListApp00.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MusicListApp00.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8B45A45F0766BCFDACF77435 /* Pods-MusicListApp00.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MusicListApp00.debug.xcconfig"; path = "Target Support Files/Pods-MusicListApp00/Pods-MusicListApp00.debug.xcconfig"; sourceTree = "<group>"; };
 		A235E3B75D95D807DFD37160 /* Pods-MusicListApp00.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MusicListApp00.release.xcconfig"; path = "Target Support Files/Pods-MusicListApp00/Pods-MusicListApp00.release.xcconfig"; sourceTree = "<group>"; };
@@ -107,6 +111,7 @@
 				05BD61912654C6820002495A /* LoginViewController.swift */,
 				05BD6198265517E60002495A /* SearchViewController.swift */,
 				05BD619A265614310002495A /* SelectViewController.swift */,
+				05BD61A226587D150002495A /* FavoriteViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -115,6 +120,7 @@
 			isa = PBXGroup;
 			children = (
 				05BD619626550E390002495A /* SaveProfile.swift */,
+				05BD61A02656865C0002495A /* MusicDataModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -262,7 +268,9 @@
 			files = (
 				05BD6199265517E60002495A /* SearchViewController.swift in Sources */,
 				05BD61922654C6820002495A /* LoginViewController.swift in Sources */,
+				05BD61A12656865C0002495A /* MusicDataModel.swift in Sources */,
 				05BD619E265668A20002495A /* CardViewCell.swift in Sources */,
+				05BD61A326587D150002495A /* FavoriteViewController.swift in Sources */,
 				05BD61792654B90D0002495A /* AppDelegate.swift in Sources */,
 				05BD619B265614310002495A /* SelectViewController.swift in Sources */,
 				05BD617B2654B90D0002495A /* SceneDelegate.swift in Sources */,

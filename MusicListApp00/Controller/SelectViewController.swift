@@ -44,7 +44,7 @@ class SelectViewController: UIViewController, VerticalCardSwiperDelegate, Vertic
         
         cardSwiper.delegate = self
         cardSwiper.datasource = self
-        
+        cardSwiper.register(nib: UINib(nibName: "CardViewCell", bundle: nil), forCellWithReuseIdentifier: "CardViewCell")
         
         cardSwiper.reloadData()
         
@@ -53,13 +53,64 @@ class SelectViewController: UIViewController, VerticalCardSwiperDelegate, Vertic
     
     
     func numberOfCards(verticalCardSwiperView: VerticalCardSwiperView) -> Int {
-        <#code#>
+        return artistNameArray.count
     }
     
     func cardForItemAt(verticalCardSwiperView: VerticalCardSwiperView, cardForItemAt index: Int) -> CardCell {
-        <#code#>
+        
+        if let cardCell = verticalCardSwiperView.dequeueReusableCell(withReuseIdentifier: "CardViewCell", for: index) as? CardViewCell {
+            
+            verticalCardSwiperView.backgroundColor = UIColor.randomFlat()
+            view.backgroundColor = verticalCardSwiperView.backgroundColor
+            
+            
+            let artistName = artistNameArray[index]
+            let musicName = musicNameArray[index]
+            cardCell.setRandomBackgroundColor()
+            cardCell.artistNameLabel.text = artistName
+            cardCell.artistNameLabel.textColor = UIColor.white
+            cardCell.musicNameLabel.text = musicName
+            cardCell.musicNameLabel.textColor = UIColor.white
+            
+            cardCell.artWorkImageView.sd_setImage(with: URL(string: imageStringArray[index]), completed: nil)
+            
+            return cardCell
+        }
+        
+        return CardCell()
     }
     
+    
+    
+    func didSwipeCardAway(card: CardCell, index: Int, swipeDirection: SwipeDirection) {
+        
+        indexNumber = index
+        
+        if swipeDirection == .Right {
+            
+            likeartistNameArray.append(artistNameArray[indexNumber])
+            likemusicNameArray.append(musicNameArray[indexNumber])
+            likepreviewURLArray.append(previewURLArray[indexNumber])
+            likeimageStringArray.append(imageStringArray[indexNumber])
+            
+            if likeArtistViewUrlArray.count != 0 && likemusicNameArray.count != 0 && likepreviewURLArray.count != 0 && likeimageStringArray.count != 0 {
+                
+                let musicDataModel = MusicDataModel(artistName: artistNameArray[indexNumber], musicName: musicNameArray[indexNumber], previewURL: previewURLArray[indexNumber], imageString: imageStringArray[indexNumber], userID: userID, userName: userName)
+                
+                musicDataModel.save()
+            }
+            
+        }
+        
+    }
+    
+    
+    
+    @IBAction func back(_ sender: Any) {
+        
+        dismiss(animated: true, completion: nil)
+        
+    }
     
     
     
