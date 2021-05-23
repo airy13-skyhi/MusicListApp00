@@ -22,6 +22,7 @@
 		05BD619F265668A20002495A /* CardViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 05BD619D265668A20002495A /* CardViewCell.xib */; };
 		05BD61A12656865C0002495A /* MusicDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05BD61A02656865C0002495A /* MusicDataModel.swift */; };
 		05BD61A326587D150002495A /* FavoriteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05BD61A226587D150002495A /* FavoriteViewController.swift */; };
+		05BD61A52659E4390002495A /* ListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05BD61A42659E4390002495A /* ListTableViewController.swift */; };
 		AEBD3E19C91EBE9021803954 /* Pods_MusicListApp00.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 23A63CE675A53631C5E84A98 /* Pods_MusicListApp00.framework */; };
 /* End PBXBuildFile section */
 
@@ -43,6 +44,7 @@
 		05BD619D265668A20002495A /* CardViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CardViewCell.xib; sourceTree = "<group>"; };
 		05BD61A02656865C0002495A /* MusicDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicDataModel.swift; sourceTree = "<group>"; };
 		05BD61A226587D150002495A /* FavoriteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteViewController.swift; sourceTree = "<group>"; };
+		05BD61A42659E4390002495A /* ListTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListTableViewController.swift; sourceTree = "<group>"; };
 		23A63CE675A53631C5E84A98 /* Pods_MusicListApp00.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MusicListApp00.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8B45A45F0766BCFDACF77435 /* Pods-MusicListApp00.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MusicListApp00.debug.xcconfig"; path = "Target Support Files/Pods-MusicListApp00/Pods-MusicListApp00.debug.xcconfig"; sourceTree = "<group>"; };
 		A235E3B75D95D807DFD37160 /* Pods-MusicListApp00.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MusicListApp00.release.xcconfig"; path = "Target Support Files/Pods-MusicListApp00/Pods-MusicListApp00.release.xcconfig"; sourceTree = "<group>"; };
@@ -112,6 +114,7 @@
 				05BD6198265517E60002495A /* SearchViewController.swift */,
 				05BD619A265614310002495A /* SelectViewController.swift */,
 				05BD61A226587D150002495A /* FavoriteViewController.swift */,
+				05BD61A42659E4390002495A /* ListTableViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -274,6 +277,7 @@
 				05BD61792654B90D0002495A /* AppDelegate.swift in Sources */,
 				05BD619B265614310002495A /* SelectViewController.swift in Sources */,
 				05BD617B2654B90D0002495A /* SceneDelegate.swift in Sources */,
+				05BD61A52659E4390002495A /* ListTableViewController.swift in Sources */,
 				05BD61952654CA140002495A /* UIColorExtension.swift in Sources */,
 				05BD619726550E390002495A /* SaveProfile.swift in Sources */,
 			);

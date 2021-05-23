@@ -23,6 +23,8 @@ class MusicDataModel {
     
     var key:String! = ""
     
+    
+    //外部データを内部に取り込む
     init (artistName:String,musicName:String,previewURL:String,imageString:String,userID:String,userName:String) {
         
         self.artistName = artistName
@@ -35,6 +37,8 @@ class MusicDataModel {
         ref = Database.database().reference().child("users").child(userID).childByAutoId()
     }
     
+    
+    //DataSnapshotを引き換えに、値をつくる
     init(snapshot:DataSnapshot) {
         
         ref = snapshot.ref

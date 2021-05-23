@@ -123,10 +123,10 @@
             </objects>
             <point key="canvasLocation" x="1653.8461538461538" y="83.886255924170612"/>
         </scene>
-        <!--View Controller-->
+        <!--Favorite View Controller-->
         <scene sceneID="EdI-Xp-9bO">
             <objects>
-                <viewController id="oUP-W2-fCC" sceneMemberID="viewController">
+                <viewController id="oUP-W2-fCC" customClass="FavoriteViewController" customModule="MusicListApp00" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="YAH-MV-exN">
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -181,6 +181,9 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                     <navigationItem key="navigationItem" id="xcl-cl-gAz"/>
+                    <connections>
+                        <outlet property="favTableView" destination="7i8-Zd-uS7" id="5zX-jR-DwG"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Lpp-x2-S4f" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -218,6 +221,21 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wfR-B4-TQS" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1653.8461538461538" y="760.66350710900474"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="zZ3-ZK-tcY">
+            <objects>
+                <viewController id="gQf-gp-LHc" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="LAp-ej-0vc">
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="IgW-Wq-Z8V"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ZY2-Fm-gk0" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2380" y="761"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="PLn-eN-Jm2">
