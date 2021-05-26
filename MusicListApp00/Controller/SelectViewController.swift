@@ -80,6 +80,34 @@ class SelectViewController: UIViewController, VerticalCardSwiperDelegate, Vertic
         return CardCell()
     }
     
+    func willSwipeCardAway(card: CardCell, index: Int, swipeDirection: SwipeDirection) {
+        // called right before the card animates off the screen.
+        
+        indexNumber = index
+        
+        if swipeDirection == .Right {
+            
+            likeartistNameArray.append(artistNameArray[indexNumber])
+            likemusicNameArray.append(musicNameArray[indexNumber])
+            likepreviewURLArray.append(previewURLArray[indexNumber])
+            likeimageStringArray.append(imageStringArray[indexNumber])
+            
+            if likeartistNameArray.count != 0 && likemusicNameArray.count != 0 && likepreviewURLArray.count != 0 && likeimageStringArray.count != 0 {
+                
+                let musicDataModel = MusicDataModel(artistName: artistNameArray[indexNumber], musicName: musicNameArray[indexNumber], previewURL: previewURLArray[indexNumber], imageString: imageStringArray[indexNumber], userID: userID, userName: userName)
+                
+                musicDataModel.save()
+            }
+            
+        }
+        
+        
+        artistNameArray.remove(at: index)
+        musicNameArray.remove(at: index)
+        previewURLArray.remove(at: index)
+        imageStringArray.remove(at: index)
+        
+    }
     
     
     func didSwipeCardAway(card: CardCell, index: Int, swipeDirection: SwipeDirection) {
@@ -93,7 +121,7 @@ class SelectViewController: UIViewController, VerticalCardSwiperDelegate, Vertic
             likepreviewURLArray.append(previewURLArray[indexNumber])
             likeimageStringArray.append(imageStringArray[indexNumber])
             
-            if likeArtistViewUrlArray.count != 0 && likemusicNameArray.count != 0 && likepreviewURLArray.count != 0 && likeimageStringArray.count != 0 {
+            if likeartistNameArray.count != 0 && likemusicNameArray.count != 0 && likepreviewURLArray.count != 0 && likeimageStringArray.count != 0 {
                 
                 let musicDataModel = MusicDataModel(artistName: artistNameArray[indexNumber], musicName: musicNameArray[indexNumber], previewURL: previewURLArray[indexNumber], imageString: imageStringArray[indexNumber], userID: userID, userName: userName)
                 

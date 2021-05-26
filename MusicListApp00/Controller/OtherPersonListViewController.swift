@@ -12,28 +12,9 @@ import AVFoundation
 import PKHUD
 
 
-class PlayMusicButton:UIButton {
-    
-    var params:Dictionary<String,Any>
-    
-    override init(frame:CGRect) {
-        
-        self.params = [:]
-        super.init(frame: frame)
-    }
-    
-    required init?(coder aDecoder:NSCoder) {
-        
-        self.params = [:]
-        super.init(coder: aDecoder)
-        
-    }
-    
-}
 
 
-
-class FavoriteViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, URLSessionDownloadDelegate {
+class OtherPersonListViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, URLSessionDownloadDelegate {
     
     
     
@@ -51,8 +32,8 @@ class FavoriteViewController: UIViewController, UITableViewDelegate, UITableView
     
     
     
-    
     @IBOutlet weak var favTableView: UITableView!
+    
     
     
     
@@ -61,24 +42,13 @@ class FavoriteViewController: UIViewController, UITableViewDelegate, UITableView
         
         favTableView.allowsSelection = true
         
-        if UserDefaults.standard.object(forKey: "userID") != nil {
-            
-            userID = UserDefaults.standard.object(forKey: "userID") as! String
-        }
-        
-        
-        if UserDefaults.standard.object(forKey: "userName") != nil {
-            
-            userName = UserDefaults.standard.object(forKey: "userName") as! String
-            
-            self.title = "\(userName)'s MusicList"
-        }
-        
         
         favTableView.delegate = self
         favTableView.dataSource = self
         
+        
     }
+    
     
     
     
@@ -98,7 +68,7 @@ class FavoriteViewController: UIViewController, UITableViewDelegate, UITableView
         
         HUD.show(.progress)
         
-        favRef.child("users").child(userID).observe(.value) { (snapshot) in
+        favRef.child("users").child(userID).observe(.value) { snapshot in
             
             self.musicDataModelArray.removeAll()
             
@@ -136,8 +106,7 @@ class FavoriteViewController: UIViewController, UITableViewDelegate, UITableView
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
-        
-        cell.selectionStyle = .none
+        cell.isHighlighted = false
         
         let musicDataModel = musicDataModelArray[indexPath.row]
         
@@ -168,7 +137,6 @@ class FavoriteViewController: UIViewController, UITableViewDelegate, UITableView
             player?.stop()
         }
         
-        
         let indexNumber:Int = sender.params["value"] as! Int
         let urlString = musicDataModelArray[indexNumber].previewURL
         let url = URL(string: urlString!)
@@ -179,7 +147,6 @@ class FavoriteViewController: UIViewController, UITableViewDelegate, UITableView
         
     }
     
-    
     @IBAction func back(_ sender: Any) {
         
         if player?.isPlaying == true {
@@ -187,7 +154,9 @@ class FavoriteViewController: UIViewController, UITableViewDelegate, UITableView
         }
         
         self.navigationController?.popViewController(animated: true)
+        
     }
+    
     
     
     func downloadMusicURL(url:URL) {

@@ -113,7 +113,7 @@ class SearchViewController: UIViewController, UITextFieldDelegate {
         
         if searchTextField.text != nil && segue.identifier == "selectVC" {
             
-            let selectVC = segue.description as! SelectViewController
+            let selectVC = segue.destination as! SelectViewController
             
             selectVC.artistNameArray = self.artistNameArray
             selectVC.imageStringArray = self.imageStringArray
@@ -145,21 +145,21 @@ class SearchViewController: UIViewController, UITextFieldDelegate {
             switch response.result {
             
             
-            case .success(_):
+            case .success:
                 
                 let json:JSON = JSON(response.data as Any)
-                var resultCount:Int = json["resultCount"].int!
+                let resultCount:Int = json["resultCount"].int!
                 
                 for i in 0 ..< resultCount {
                     
-                    var artWorkUrl = json["result"][i]["artworkUrl60"].string
-                    let previewUrl = json["result"][i]["previewUrl"].string
-                    let artistName = json["result"][i]["artistName"].string
-                    let trackCensoredName = json["result"][i]["trackCensoredName"].string
+                    var artWorkUrl = json["results"][i]["artworkUrl60"].string
+                    let previewUrl = json["results"][i]["previewUrl"].string
+                    let artistName = json["results"][i]["artistName"].string
+                    let trackCensoredName = json["results"][i]["trackCensoredName"].string
                     
-                    if let range = artWorkUrl?.range(of: "60*60bb") {
+                    if let range = artWorkUrl?.range(of: "60x60bb") {
                         
-                        artWorkUrl?.replaceSubrange(range, with: "320*320bb")
+                        artWorkUrl?.replaceSubrange(range, with: "320x320bb")
                         
                     }
                     
@@ -188,9 +188,25 @@ class SearchViewController: UIViewController, UITextFieldDelegate {
     
     
     
+    @IBAction func moveToFav(_ sender: Any) {
+        
+        let favVC = self.storyboard?.instantiateViewController(identifier: "fav") as! FavoriteViewController
+        
+        self.navigationController?.pushViewController(favVC, animated: true)
+        
+        
+    }
     
     
     
+    @IBAction func moveToList(_ sender: Any) {
+        
+        
+        let listVC = self.storyboard?.instantiateViewController(identifier: "list") as! ListTableViewController
+        
+        self.navigationController?.pushViewController(listVC, animated: true)
+        
+    }
     
     
     
